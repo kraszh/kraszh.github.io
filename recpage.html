@@ -7,15 +7,15 @@
         <!--<link rel="shortcut icon" href="/assets/favicon.ico">-->
         <link rel="stylesheet" href="./style.css">
     </head>
-<body>
-    <div id="panel">
-        <h1 id="resultsHeader">Results for 'x'</h1>
-        <div id="results"></div>
-    </div>
+<body onload="fetchAndDisplayRecipes()">
     <nav class = "header">
         <img src="img/logo.png">
     </nav>
     <br>
+    <div id="panel">
+        <h1 id="resultsHeader">Results for 'x'</h1>
+        <div id="results"></div>
+    </div>
     <nav class ="nav">
         <a href = "index.html">Spices</a>
         <a href = "ingpage.html">Ingr.</a>
@@ -23,11 +23,12 @@
     </nav>
 
     <script src="foodlist.js"></script>
-    <script>
+    
+    <!--<script>
         window.onload = function() {
             fetchAndDisplayRecipes();
         }
-    </script>
+    </script>-->
 </body>
 
 <!-- script elem -->
