@@ -20,14 +20,14 @@ function fetchRecipes(query, excludeIngredients, includeIngredients) {
     var appId = "fe8b424a";
     var appKey = "9778009a571551e45d555efde563a70f";
     var excludeParams = excludeIngredients ? `&excluded=${encodeURIComponent(excludeIngredients)}` : '';
-    var includeParams = includeIngredients ? `&allowedIngredient=${encodeURIComponent(includeIngredients)}` : '';
+    //var includeParams = includeIngredients ? `&allowedIngredient=${encodeURIComponent(includeIngredients)}` : '';
     var queryParams = `&app_id=${appId}&app_key=${appKey}`;
     query = localStorage.getItem("ings_string");
 
-    var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${excludeParams}${queryParams}`;
+    var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${}${queryParams}`; //excludeParams
 
     console.log('Excluded: ', excludeParams);
-    console.log('Include: ', includeParams);
+    console.log('Include: ', query);
     console.log('Query: ', queryParams);
     console.log('URL: ', endpoint);
 
