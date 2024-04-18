@@ -76,7 +76,7 @@ function displayRecipes(hits) {
                 <img src="${recipe.image}" alt="${recipe.label}">
             </div>
             <div class="recipe-details">
-                <h2>${recipe.label}</h2>
+                <h2><a href="${recipe.url}" target="_blank">${recipe.label}</a></h2>
                 <!-- Add more details here as needed -->
             </div>
         `;
