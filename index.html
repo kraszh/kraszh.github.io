@@ -40,17 +40,21 @@
         </div>
         <button type = "button" onclick = "clrS()">Clear</button>
         <div class = "diets">
-            <input type = "checkbox" value = "alcohol-free" onclick = "saveH()">Alcohol-free<br>
             <input type = "checkbox" value = "balanced" onclick = "saveD()">Balanced<br>
             <input type = "checkbox" value = "high-fiber" onclick = "saveD()">High-Fiber<br>
             <input type = "checkbox" value = "high-protein" onclick = "saveD()">High-Protein<br>
+            <input type = "checkbox" value = "low-carb" onclick = "saveD()">Low-Carb<br>
+            <input type = "checkbox" value = "low-fat" onclick = "saveD()">Low-Fat<br>
+            <input type = "checkbox" value = "low-sodium" onclick = "saveD()">Low-Sodium<br>
+        </div>
+
+        <button type = "button" onclick = "clrD()">Clear</button>
+        <div class = "health">
+            <input type = "checkbox" value = "alcohol-free" onclick = "saveH()">Alcohol-free<br>
             <input type = "checkbox" value = "keto-friendly" onclick = "saveH()">Keto<br>
             <input type = "checkbox" value = "kidney-friendly" onclick = "saveH()">Kidney friendly<br>
             <input type = "checkbox" value = "kosher" onclick = "saveH()">Kosher<br>
-            <input type = "checkbox" value = "low-carb" onclick = "saveD()">Low-Carb<br>
-            <input type = "checkbox" value = "low-fat" onclick = "saveD()">Low-Fat<br>
             <input type = "checkbox" value = "low-potassium" onclick = "saveH()">Low-potassium<br>
-            <input type = "checkbox" value = "low-sodium" onclick = "saveD()">Low-Sodium<br>
             <input type = "checkbox" value = "no-oil-added" onclick = "saveH()">No oil added<br>
             <input type = "checkbox" value = "low-sugar" onclick = "saveH()">Low-sugar<br>
             <input type = "checkbox" value = "paleo" onclick = "saveH()">Paleo<br>
@@ -61,8 +65,7 @@
             <input type = "checkbox" value = "vegan" onclick = "saveH()">Vegan<br>
             <input type = "checkbox" value = "vegetarian" onclick = "saveH()">Vegetarian<br>
         </div>
-
-        <button type = "button" onclick = "clrD()">Clear</button>
+        <button type = "button" onclick = "clrH()">Clear</button>
         <button type = "button" class="next" onclick = "list()">Continue</button>
     </form>
 
@@ -76,7 +79,6 @@
             });
             var spices_string = JSON.stringify(spices);
             localStorage.setItem('spices_string', spices_string);
-            console.log('Spices: ', spices);
         } 
         function saveD() {
             var diets = [];
@@ -87,7 +89,6 @@
             });
             var diets_string = JSON.stringify(diets);
             localStorage.setItem('diets_string', diets_string);
-            console.log('Diets: ', diets);
         }
         function saveH() {
             var health = [];
@@ -98,7 +99,6 @@
             });
             var health_string = JSON.stringify(health);
             localStorage.setItem('health_string', health_string);
-            console.log('Health: ', health)
         }
         function list() {
             saveS();
