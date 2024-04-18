@@ -148,7 +148,7 @@
             var checkedHealth = JSON.parse(localStorage.getItem('health_string'));
             if(checkedHealth != null && checkedHealth.length >= 1){
                 document.querySelectorAll('[onclick = "saveH()"]').forEach(item => {
-                    if(!checkedHealth.includes(item.value)){
+                    if(checkedHealth.includes(item.value)){
                         item.setAttribute('checked', 'checked');
                     }
                 });
