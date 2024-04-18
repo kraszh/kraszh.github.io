@@ -1,10 +1,8 @@
-let foodList = []; // Global array variable to store food names
-
 // gpt below
 // New function to fetch and display recipes
 function fetchAndDisplayRecipes() {
     console.log('Started...');
-    console.log(localStorage.getItem("spices_string"));
+    console.log(localStorage.getItem('spices_string'));
     var urlParams = new URLSearchParams(localStorage.getItem("urlValue"));
     var excludeIngredients = urlParams.get('exclude') || '';
     var includeIngredients = urlParams.get('include') || "";
@@ -12,7 +10,7 @@ function fetchAndDisplayRecipes() {
     console.log('if reached');
     document.getElementById('resultsHeader').innerText = "Results for " + query + ".";
     console.log('reached');
-    fetchRecipes(query, localStorage.getItem("spices_string"), includeIngredients);
+    fetchRecipes(query, localStorage.getItem('spices_string'), includeIngredients);
 }
 
 function fetchRecipes(query, excludeIngredients, includeIngredients) {
@@ -20,9 +18,9 @@ function fetchRecipes(query, excludeIngredients, includeIngredients) {
     var appId = "fe8b424a";
     var appKey = "9778009a571551e45d555efde563a70f";
     var excludeParams = excludeIngredients ? `&excluded=${encodeURIComponent(excludeIngredients)}` : '';
-    //var includeParams = includeIngredients ? `&allowedIngredient=${encodeURIComponent(includeIngredients)}` : '';
+    var includeParams = includeIngredients ? `&allowedIngredient=${encodeURIComponent(includeIngredients)}` : '';
     var queryParams = `&app_id=${appId}&app_key=${appKey}`;
-    query = localStorage.getItem("ings_string");
+    query = localStorage.getItem('ings_string');
 
     var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${queryParams}`; //${excludeParams}
 
