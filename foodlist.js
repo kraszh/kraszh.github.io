@@ -5,7 +5,7 @@ let foodList = []; // Global array variable to store food names
 function fetchAndDisplayRecipes() {
     console.log('Started...');
     console.log(localStorage.getItem("spices_string"));
-    /*var urlParams = new URLSearchParams(localStorage.getItem("urlValue"));*/
+    var urlParams = new URLSearchParams(localStorage.getItem("urlValue"));
     var excludeIngredients = urlParams.get('exclude') || '';
     var includeIngredients = urlParams.get('include') || "";
     var query = localStorage.getItem('ings_string');
