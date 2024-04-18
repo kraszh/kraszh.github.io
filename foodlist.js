@@ -24,7 +24,7 @@ function fetchRecipes(query, excludeIngredients, includeIngredients) {
     var queryParams = `&app_id=${appId}&app_key=${appKey}`;
     query = localStorage.getItem("ings_string");
 
-    var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${}${queryParams}`; //excludeParams
+    var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${queryParams}`; //${excludeParams}
 
     console.log('Excluded: ', excludeParams);
     console.log('Include: ', query);
