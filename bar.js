@@ -37,7 +37,7 @@ ings.addEventListener('click', (e) => {
         reBuild();
     }
 
-})
+});
 
 function clearI() {
     localStorage.removeItem('ings_string');
@@ -54,6 +54,7 @@ function loadNsave(food){
         reBuild();
         input.placeholder = '    Add Ingredient';
         input.value = '';
+        addToFoodList(food);
     }
     else{
         input.placeholder = '**! Repeated value !**';
