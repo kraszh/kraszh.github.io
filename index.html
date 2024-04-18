@@ -129,7 +129,7 @@
 
         function load() { 
             var checkedSpices = JSON.parse(localStorage.getItem('spices_string'));
-            if(checkedDiets != null && checkedSpices.length >= 1){
+            if(checkedSpices != null && checkedSpices.length >= 1){
                 document.querySelectorAll('[onclick = "saveS()"]').forEach(item => {
                     if(!checkedSpices.includes(item.value)){
                         item.setAttribute('checked', 'checked');
