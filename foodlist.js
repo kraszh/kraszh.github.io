@@ -1,36 +1,18 @@
 let foodList = []; // Global array variable to store food names
 
-// Function to add ingredient to foodList array
-function addToFoodList(food) {
-    food = food.trim().toUpperCase();
-    if (!foodList.includes(food)) {
-        foodList.push(food);
-    }
-
-    console.log('Include: ', foodList);
-    var inclStr = JSON.stringify(foodList);
-
-    localStorage.setItem("qKey", inclStr);
-}
-
-// Function to remove ingredient from foodList array
-function removeFromFoodList(food) {
-    foodList = foodList.filter(item => item !== food);
-}
-
 // gpt below
 // New function to fetch and display recipes
 function fetchAndDisplayRecipes() {
     console.log('Started...');
-    console.log(localStorage.getItem("exclKey"));
-    var urlParams = new URLSearchParams(localStorage.getItem("urlValue"));
+    console.log(localStorage.getItem("spices_string"));
+    /*var urlParams = new URLSearchParams(localStorage.getItem("urlValue"));*/
     var excludeIngredients = urlParams.get('exclude') || '';
     var includeIngredients = urlParams.get('include') || "";
-    var query = localStorage.getItem('qKey');
+    var query = localStorage.getItem('ings_string');
     console.log('if reached');
     document.getElementById('resultsHeader').innerText = "Results for " + query + ".";
     console.log('reached');
-    fetchRecipes(query, localStorage.getItem("exclKey"), includeIngredients);
+    fetchRecipes(query, localStorage.getItem("spices_string"), includeIngredients);
 }
 
 function fetchRecipes(query, excludeIngredients, includeIngredients) {
@@ -40,7 +22,7 @@ function fetchRecipes(query, excludeIngredients, includeIngredients) {
     var excludeParams = excludeIngredients ? `&excluded=${encodeURIComponent(excludeIngredients)}` : '';
     var includeParams = includeIngredients ? `&allowedIngredient=${encodeURIComponent(includeIngredients)}` : '';
     var queryParams = `&app_id=${appId}&app_key=${appKey}`;
-    query = localStorage.getItem("qKey");
+    query = localStorage.getItem("ings_string");
 
     var endpoint = `https://api.edamam.com/search?q=${encodeURIComponent(query)}${excludeParams}${queryParams}`;
 
