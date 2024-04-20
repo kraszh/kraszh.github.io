@@ -3,7 +3,7 @@ let addBtn  = document.querySelector('.btn');
 let ings  = document.querySelector('.ingredietns');
 
 let model = null;
-let user_confidence = 0.6;
+let user_confidence = 0.5;
 
 //Add ing
 function saveI() {
