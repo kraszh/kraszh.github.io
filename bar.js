@@ -54,7 +54,6 @@ function loadNsave(food){
         reBuild();
         input.placeholder = '    Add Ingredient';
         input.value = '';
-        addToFoodList(food);
     }
     else{
         input.placeholder = '**! Repeated value !**';
